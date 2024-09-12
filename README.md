@@ -76,7 +76,7 @@ The data was imported into SQL Server Management Studio (SSMS) using the SSMS Im
 
 ## Data Preparation
 
-The initial data preparation involved several crucial steps:
+The initial data preparation involved key steps:
 
 - Thorough inspection of the data dictionary to understand the 53 columns in the main dataset
 - Creation of three different tables to organize the data effectively:
@@ -166,6 +166,8 @@ WHERE LookupCodes = 31;
 
 ### Overall PPP Loan Summary
 
+![367097541-149b2e71-7be2-4ddf-b65d-11d96571d210](https://github.com/user-attachments/assets/d11bc51c-782c-4be4-aa38-db52b8cf8f8a)
+
 - Total number of approved loans: **968,525**
 - Total approved amount: **$515,518,176,983.85**
 - Average loan size: **$532,271.42**
@@ -191,19 +193,29 @@ FROM
 
 ### Detailed Comparison of 2020 vs 2021 Loans
 
-**2020:**
-- Number of loans: **659,441** (68.1% of total)
-- Total approved amount: **$377,642,663,931.70** (73.2% of total)
-- Average loan size: **$572,670.89**
+![367097546-a1fe2cd9-ce8d-48e6-9acb-2931f720ba6a](https://github.com/user-attachments/assets/ee1f6dc1-9eea-4a3d-8f36-c507f3e9c32f)
 
-**2021:**
-- Number of loans: **309,084** (31.9% of total)
-- Total approved amount: **$137,875,513,052.15** (26.8% of total)
-- Average loan size: **$446,077.81**
+#### **2020:**
+- **Number of loans:** 659,441 (68.1% of total)
+- **Total approved amount:** $377,642,663,931.70 (73.2% of total)
+- **Average loan size:** $572,670.89
 
-**Insights:**
-- While 2021 saw fewer loans, the total dollar amount was considerably lower than in 2020.
-- The average loan size in 2021 was lower, indicating a shift towards smaller loans. This likely reflects changes in program rules or increased targeting of smaller businesses.
+#### **2021:**
+- **Number of loans:** 309,084 (31.9% of total)
+- **Total approved amount:** $137,875,513,052.15 (26.8% of total)
+- **Average loan size:** $446,077.81
+
+#### **Insights and Correlation with COVID-19:**
+
+The Paycheck Protection Program (PPP) in 2020 and 2021 reveals significant differences in loan distribution, strongly reflecting the evolving nature of the COVID-19 pandemic and its economic impact.
+
+**2020** was the initial phase of the pandemic, where the U.S. economy faced unprecedented shutdowns, supply chain disruptions, and widespread layoffs. As businesses struggled to survive, the PPP was rolled out as an emergency lifeline. The high number of loans (659,441) and large total approved amount ($377.6 billion) in 2020 represent the government’s immediate and aggressive response to help businesses avoid mass layoffs. The average loan size of $572,670.89 suggests that the program initially focused on businesses with higher payroll costs, possibly medium-sized companies, which were seen as more vulnerable to collapse during the pandemic's early days.
+
+By **2021**, the situation had evolved. While the pandemic still posed a serious threat, the economy began to show signs of stabilization due to vaccine rollouts and partial reopening of businesses. This is reflected in the reduced number of loans (309,084) and the significantly lower total approved amount ($137.9 billion). Additionally, the drop in the average loan size to $446,077.81 points to a shift in the program's focus. This shift is likely due to the revised PPP guidelines in 2021, which increased the emphasis on smaller businesses, particularly those that may have been overlooked during the initial rush for loans in 2020. It also coincides with the fact that larger businesses had already received support in the earlier stages of the pandemic, reducing their need for additional funding.
+
+This adjustment aligns with the changes in the pandemic’s trajectory, where small businesses, especially in the hardest-hit sectors like retail, hospitality, and personal services, continued to face severe financial pressure. These sectors were likely targeted more directly in 2021 as they struggled with ongoing restrictions, lower consumer demand, and fluctuating reopening protocols.
+
+In summary, the decrease in loan volume, total approved amount, and average loan size in 2021 reflects the program’s pivot toward smaller businesses, which were still vulnerable even as larger companies began to stabilize. This shift highlights how the economic challenges of COVID-19 evolved, from a broad-based collapse in 2020 to more concentrated pockets of distress in 2021.
 
 #### SQL Query
 
@@ -238,15 +250,16 @@ GROUP BY
 
 ### Top Originating Lenders Analysis
 
+![367097550-78d76091-9871-4719-bd7b-0e386fed3283](https://github.com/user-attachments/assets/fe2e38ca-15d4-4fde-849a-845940c62f1c)
+
 **2020:**
-- Number of originating lenders: **4,119**
+- **Number of originating lenders: 4,119**
+  - The significant number of lenders in 2020 was a direct response to the unprecedented scale of the COVID-19 crisis. With businesses across the nation in desperate need of financial support, the SBA relied heavily on both large and small financial institutions to distribute funds quickly and efficiently. 
 
 **2021:**
-- Number of originating lenders: **3,779**
+- **Number of originating lenders: 3,779** (8.3% decrease)
+  - By 2021, as the pandemic’s immediate economic impact began to stabilize, the number of participating lenders slightly decreased. This decline was influenced by lower loan demand as many businesses had either stabilized or adapted to the new economic environment.
 
-**Insights:**
-- The number of originating lenders decreased by 8.3% from 2020 to 2021.
-- Major lenders continued to play a significant role, with some dynamics shifting between the years.
 
 #### SQL Query
 
@@ -284,6 +297,13 @@ GROUP BY
 ```
 ### Detailed Industry Analysis of PPP Loans
 
+![2020](https://github.com/user-attachments/assets/121ed35a-b8a4-4911-a79e-8377daa11ef4)
+  *2020*
+
+![2021](https://github.com/user-attachments/assets/850c00ab-4c02-4bc8-83ce-45118c17420a)
+  *2021*
+
+
 #### 1. Shift in Industry Distribution:
 
 - **In 2020**, the top sectors by `Percentage_By_Amount` were:
@@ -319,14 +339,6 @@ GROUP BY
 #### 6. Professional, Scientific and Technical Services:
 - Dropped from 3rd place in 2020 (16.05%) to 5th place in 2021 (11.85%).
 - The number of loans decreased from 83,632 in 2020 to 32,389 in 2021.
-
-These shifts reflect the changing economic landscape as the pandemic progressed:
-- Initial widespread impact across sectors in 2020.
-- More targeted support to heavily impacted industries like hospitality in 2021.
-- Reduction in overall number of loans in 2021, possibly due to businesses adapting or, unfortunately, closing.
-- The continued high ranking of Construction suggests ongoing economic activity in this sector despite the pandemic.
-
-This analysis demonstrates how the PPP loan distribution adapted to the evolving economic needs during different phases of the pandemic, with some sectors requiring more sustained support than others.
 
 #### SQL Query
 
@@ -389,6 +401,8 @@ ORDER BY
 
 ```
 ### Comprehensive Loan Forgiveness Analysis
+
+![367097554-1eeaac05-0ade-4795-af57-2f481be3e14c](https://github.com/user-attachments/assets/32185f64-0d08-41dd-996e-59a2a9275507)
 
 #### **2020:**
 - **Number of Approved Loans:** 659,441
@@ -462,25 +476,45 @@ FROM
 ```
 ### Detailed Monthly Loan Approval Trends
 
-| **Month** | **Year** | **Number of Approved Loans** | **Total Amount Approved ($)** | **Average Loan Size ($)** |
-|-----------|----------|-----------------------------|-------------------------------|---------------------------|
-| April     | 2020     | 548,335                     | 33,030,614,121.53             | 60,238.19                 |
-| February  | 2021     | 112,336                     | 48,776,360,160.39             | 434,200.61                |
-| January   | 2021     | 105,154                     | 45,099,149,125.56             | 428,886.67                |
-| May       | 2020     | 93,962                      | 39,076,592,512.30             | 415,876.55                |
-| March     | 2021     | 66,139                      | 30,314,842,914.58             | 458,350.49                |
-| April     | 2021     | 19,219                      | 10,236,678,811.20             | 532,633.27                |
-| June      | 2020     | 11,289                      | 5,052,506,050.89              | 447,560.11                |
-| May       | 2021     | 5,837                       | 3,171,049,652.98              | 543,267.03                |
-| July      | 2020     | 3,813                       | 1,808,689,222.88              | 474,348.08                |
-| August    | 2020     | 2,038                       | 1,391,799,644.80              | 682,924.26                |
+![367097558-0d114872-98be-4612-b155-aea5a080bfdb](https://github.com/user-attachments/assets/f464c8fc-973f-4426-a0d5-0df5d41be014)
 
-### Key Insights:
-1. **April 2020** saw the highest number of loan approvals (548,335), but the average loan size was much smaller ($60,238.19) compared to later months.
-2. **February 2021** and **January 2021** had the highest total amounts approved, with average loan sizes of $434,200.61 and $428,886.67 respectively, suggesting larger loan sizes but fewer approvals.
-3. **August 2020** had the highest average loan size ($682,924.26), but only 2,038 loans were approved that month.
-4. The loan approval trends show a significant drop in the number of approved loans from April 2020 to later months, while the **average loan size** increased as time progressed, especially into 2021.
-5. **May 2021** had the highest average loan size ($543,267.03), showing a trend of approving fewer but larger loans in that period.
+**1. April 2020:**
+   - **Number of Approved Loans:** 548,335
+   - **Total Amount Approved:** $33,030,614,121.53
+     
+   - **Insight:** This month represents the peak of the initial PPP response, aligning with the early stages of the COVID-19 pandemic when the U.S. saw a significant surge in loan applications. The high number of loans approved reflects the urgent need to stabilize small businesses facing sudden shutdowns and economic uncertainty as the pandemic led to widespread lockdowns and business closures.
+
+**2. May 2020:**
+   - **Number of Approved Loans:** 93,962
+   - **Total Amount Approved:** $39,076,592,512.30
+     
+   - **Insight:** Following the initial peak, May saw a reduction in the number of loans but an increase in the total amount approved. This shift indicates a transition from general support to addressing more substantial financial needs of larger businesses as the pandemic's impact persisted and the program adapted to evolving economic conditions.
+
+**3. February 2021:**
+   - **Number of Approved Loans:** 112,336
+   - **Total Amount Approved:** $48,776,360,160.39
+     
+   - **Insight:** This peak in early 2021 reflects the ongoing economic strain as businesses continued to face challenges from extended pandemic restrictions and lockdowns. The resurgence in loan approvals indicates a renewed focus on providing critical support to businesses grappling with prolonged disruptions and slower recovery.
+
+**4. March 2021:**
+   - **Number of Approved Loans:** 66,139
+   - **Total Amount Approved:** $30,314,842,914.58
+     
+   - **Insight:** The continued high volume of loans in March 2021 highlights the sustained impact of the pandemic on businesses. This period, just before the vaccine rollout gained momentum, illustrates the need for ongoing financial relief as businesses faced continued uncertainty and operational challenges.
+
+**5. April 2021:**
+   - **Number of Approved Loans:** 19,219
+   - **Total Amount Approved:** $10,236,678,811.20
+     
+   - **Insight:** The significant drop in the number of loans but high total amount approved indicates a more targeted approach to financial support. By this time, as vaccination efforts were ramping up and businesses began adjusting to a new normal, the PPP focused on high-impact sectors or businesses still facing severe challenges, reflecting a shift in strategy towards more selective assistance.
+
+### Correlation with COVID-19 Milestones:
+
+- **April 2020:** Initial response phase with widespread business closures and economic disruption due to the rapid spread of COVID-19.
+- **May 2020:** Ongoing pandemic with adaptations in the PPP to address larger financial needs amid continued lockdowns and economic strain.
+- **February 2021:** Economic challenges persist with extended restrictions; loan approvals peak as businesses face prolonged impacts and slow recovery.
+- **March 2021:** Continued need for financial support as businesses await vaccine distribution and adapt to evolving pandemic conditions.
+- **April 2021:** Shift towards targeted support reflecting improved vaccine rollout and adjustment to new economic conditions. 
 
 #### SQL Query
 ```sql
