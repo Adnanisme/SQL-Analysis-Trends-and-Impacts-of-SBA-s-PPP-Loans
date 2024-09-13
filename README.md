@@ -34,20 +34,10 @@ The dataset used for this analysis comes from the U.S. Small Business Administra
 
 - [SBA public data: Contains detailed information about each PPP loan, including 53 columns of data points](https://data.sba.gov/dataset/ppp-foia)
 
-![367008287-78095eb2-5ded-489d-946a-4a47e44b8ed5](https://github.com/user-attachments/assets/c6fef490-836a-4826-8b30-830876d5b6a2)
-![367008296-bfd884a6-fecb-45b0-959d-84dfea5405bf](https://github.com/user-attachments/assets/d27891b7-940d-4f1b-96c6-a21af7ba5bbc)
-![367008269-1ea933a5-c4b4-4202-9299-7da814669f26](https://github.com/user-attachments/assets/7cb37a38-3812-46e8-bc96-5fc720aed96b)
-![367008262-eb6392b7-092d-4951-b30d-7ce2cf27cb2b](https://github.com/user-attachments/assets/41f322f0-b864-43a9-958e-a4554b6cc0cf)
-![367008243-a64f6351-f8cb-43a9-a7c5-ebcd1c54e6d3](https://github.com/user-attachments/assets/192e65c3-0559-418b-a4cc-9703142403a8)
-
 - [NAICS industry standards: Provides industry sector classifications for categorizing businesses](https://www.sba.gov/document/support-table-size-standards)
-
-![367008220-008ff57e-59fd-48c0-aa73-615b7ea11d02](https://github.com/user-attachments/assets/fcb73a97-2031-4fa6-826e-c37c49615f56)
 
 - [Data dictionary: Explains the data points in the main dataset, crucial for accurate interpretation](https://www.sba.gov/document/support-table-size-standards)
 
-![367008474-4f86f5ad-e264-46f1-a98c-4ab1c2a8d9bc](https://github.com/user-attachments/assets/17821182-4407-4941-94d3-8e090a3b60bb)
-![367008466-555d0f52-4069-401d-8fe4-a87d75dab634](https://github.com/user-attachments/assets/e5d29508-fe8b-4be7-b8c8-f49056154f4d)
 
 Key data points include:
 
